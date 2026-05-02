@@ -187,7 +187,7 @@ Date           PiWh  NetWh BatVmin BatVmax  Buck% Buck_min Buck_max  SoC% USB5V_
 - **System‑level watchdog** was disabled because it caused unnecessary reboots. Service uses `Restart=always` without a watchdog.
 - **Variable naming**: `current_ma` (ESP8266 net battery current) is ambiguous; would be clearer as `bat_current_ma`.
 - **Data parsing**: Local LLMs choke on raw CSV megabytes; pre‑aggregation (as in `sensorbatterystatsjson.py`) is essential.
-- **HDC1000 i2c sensor*** Over time the sensor gets stuck in 100% saturation when exposed to outside.  Switched to BME280 sensor  
+- **HDC1000 i2c sensor** Over time the sensor gets stuck in 100% saturation when exposed to outside.  Switched to BME280 sensor  
 ## 7. Health Monitoring Script (`./solarpi_health.sh`)
 
 See Section 3 for the full script content and example output. It checks uptime, load, memory, storage, services (SSH, cron), BME280 sensor, WiFi RSSI, sensor socket, logs, battery, and recent kernel errors. Run regularly to verify system health.
