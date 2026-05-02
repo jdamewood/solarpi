@@ -1,24 +1,23 @@
-
 # Files in `raspberry/sensors/`
 
 | File                         | Description |
 |------------------------------|-------------|
-| `adafruit_TSL2651test.py`    | Test script for TSL2561 light sensor |
-| `bme280_manual.py`       | Reads BME280 temperature, pressure, and humidity using manual calibration formulas (floating‑point). TODO instructions for BME280 raspberry kernal driver install|
-| `bme280kerneltest.py`        | Better accuracy than bme_manual.py method |
-| `HDC1000.py`                 | Read HDC1000 sensors Temp/Humidity.  Removed from system due poor preformance of becoming 100% saturated even with the heater bit toggled |
-| `HDC1000serialnumber.py`     | TODO: add description |
-| `ina219`                     | Compiled binary to read INA219 power rail (usage: `ina219 0x44` or `0x45`) |
-| `ina219.c`                   | Source code for `ina219` binary |
-| `ina219test.py`              | Python version to read INA219 sensor |
-| `power.py`                   | TODO: add description |
-| `powertest_server_json.py`   | Main sensor server on Raspberry Pi. Reads INA219, TSL2561, and BME280 at 1 Hz, logs to CSV/JSON, and listens on port 5005 for `"go"` command (returns JSON). Used by `solarpi_health.sh` and client dashboards. |
-| `powertest_server.py`        | Older version of the server (may be deprecated) |
-| `SDL_Pi_HDC1000.py`          | Library for HDC1000 temperature/humidity sensor |
-| `sensorserver.py`            | TODO: add description |
-| `solarpi_health.sh`          | System health check script (uptime, BME280, WiFi, logs, etc.) |
-| `test_hdc1000.py`            | Test script for HDC1000 sensor |
-| `testina219.c`               | Test program for INA219 (C source) |
-| `TSL2561test.py`             | Test script for TSL2561 light sensor |
+| `adafruit_TSL2651test.py`    | Test script for TSL2561 light sensor (filename typo). Reads chip ID, gain, integration time, and lux. |
+| `bme280_manual.py`           | Reads BME280 temperature, pressure, and humidity using manual calibration formulas (floating‑point). (TODO: add instructions for Raspberry Pi kernel driver alternative.) |
+| `bme280kerneltest.py`        | Uses the `bme280` Python library (I²C, userspace) for readings. Often more accurate than manual method. |
+| `HDC1000.py`                 | Reads HDC1000 temperature/humidity sensor. Removed from system due to poor performance (becomes 100% saturated even with heater bit toggled). |
+| `HDC1000serialnumber.py`     | Reads the unique serial number from an HDC1000 sensor (for identification). |
+| `ina219`                     | Compiled C binary to read INA219 at a given I²C address (usage: `ina219 0x44` or `0x45`). Displays bus voltage, current, power. |
+| `ina219.c`                   | Source code for the `ina219` binary. |
+| `ina219test.py`              | Python alternative to read INA219 sensor (useful for debugging). |
+| `power.py`                   | Script to monitor power consumption (e.g., battery voltage, current, wattage). Exact function TBD. |
+| `powertest_server_json.py`   | Main sensor server on Raspberry Pi. Reads INA219, TSL2561, and BME280 at 1 Hz, logs to CSV/JSON, listens on port 5005 for `"go"` command (returns JSON). Used by `solarpi_health.sh` and client dashboards. |
+| `powertest_server.py`        | Older version of the server (may be deprecated). |
+| `SDL_Pi_HDC1000.py`          | Third‑party library for HDC1000 sensor. |
+| `sensorserver.py`            | Simple socket server that streams sensor data (pre‑Flask implementation). Possibly deprecated. |
+| `solarpi_health.sh`          | Comprehensive system health check. Reads BME280 via port 5005 socket, displays uptime, load, memory, CPU temp, storage, services (SSH, cron), WiFi RSSI, log sizes, battery (via `ina219`), and recent kernel errors. |
+| `test_hdc1000.py`            | Quick test for HDC1000 sensor. |
+| `testina219.c`               | Minimal C test for INA219 (different from the full `ina219.c`). |
+| `TSL2561test.py`             | Alternative test script for TSL2561 light sensor (may use different settings). |
 
 > **Note**: The `LICENSE` (MIT) and `README.md` are located in the repository root, not inside this folder.
