@@ -47,10 +47,7 @@ sudo systemctl status powertest.service
 ## 4. Data Processing Script
 
 **`sensorbatterystatsjson.py`**  
-Example run:
-```python3 sensorbatterystatsjson.py```
 
-```
 Fetches data from both Flask endpoints, computes daily statistics:
 
 - Pi energy consumption (`PiWh`)
@@ -61,6 +58,8 @@ Fetches data from both Flask endpoints, computes daily statistics:
 - USB5V rail voltage & current min/max
 - BME280 temperature min/max/avg
 
+Example run:
+```python3 sensorbatterystatsjson.py```
 ```
 Fetching data from SolarPi main...
 ✅ Fetched 119871 records from SolarPi main
