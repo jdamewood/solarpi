@@ -44,4 +44,5 @@ humidity=$(cat $IIO_PATH/in_humidityrelative_input) # milli‑percent
 echo "Temp: $(echo "scale=2;$temp/1000"|bc)°C"
 echo "Pressure: $pressure hPa"
 echo "Humidity: $(echo "scale=1;$humidity/1000"|bc)%"
-
+```
+This method does not require Python libraries and is lightweight. Your existing Python scripts are also valid; you can keep both.
