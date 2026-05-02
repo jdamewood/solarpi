@@ -36,13 +36,17 @@ After reboot, the sensor appears at:
 Read values with:
 
 ```bash
+#!/bin/bash
 IIO_PATH="/sys/bus/i2c/devices/1-0076/iio:device0"
-temp=$(cat $IIO_PATH/in_temp_input)          # millidegrees
-pressure=$(cat $IIO_PATH/in_pressure_input)  # hPa
-humidity=$(cat $IIO_PATH/in_humidityrelative_input) # milli‑percent
+temp=$(cat $IIO_PATH/in_temp_input)
+pressure=$(cat $IIO_PATH/in_pressure_input)
+humidity=$(cat $IIO_PATH/in_humidityrelative_input)
 
-echo "Temp: $(echo "scale=2;$temp/1000"|bc)°C"
+temp_c=$(awk "BEGIN {printf \"%.2f\", $temp/1000}")
+humidity_pct=$(awk "BEGIN {printf \"%.1f\", $humidity/1000}")
+
+echo "Temp: $temp_c°C"
 echo "Pressure: $pressure hPa"
-echo "Humidity: $(echo "scale=1;$humidity/1000"|bc)%"
+echo "Humidity: $humidity_pct%"
 ```
 This method does not require Python libraries and is lightweight. Your existing Python scripts are also valid; you can keep both.
