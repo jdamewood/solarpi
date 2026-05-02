@@ -37,8 +37,8 @@ Expected output: ```active (running)```.
 ## View Logs
 ```bash
 journalctl -u powertest.service -f
-```
-## Press ```Ctrl+C``` to exit.
+# Press Ctrl+C to exit```
+
 ## Restart or Reload After Changes
 If you edit the service file, run:
 
