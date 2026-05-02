@@ -49,7 +49,6 @@ sudo systemctl status powertest.service
 **`python3 sensorbatterystatsjson.py`**  
 
 
-```
 Fetches data from both Flask endpoints, computes daily statistics:
 
 - Pi energy consumption (`PiWh`)
@@ -60,7 +59,7 @@ Fetches data from both Flask endpoints, computes daily statistics:
 - USB5V rail voltage & current min/max
 - BME280 temperature min/max/avg
 
-```python sensorbatterystatsjson.py
+```
 Fetching data from SolarPi main...
 ✅ Fetched 119871 records from SolarPi main
 Fetching data from ESP8266 battery monitor...
