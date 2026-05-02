@@ -6,7 +6,7 @@
 | `adafruit_TSL2651test.py`    | Test script for TSL2561 light sensor |
 | `bme280_manual.py`       | Reads BME280 temperature, pressure, and humidity using manual calibration formulas (floating‑point). TODO instructions for BME280 raspberry kernal driver install|
 | `bme280kerneltest.py`        | Better accuracy than bme_manual.py method |
-| `HDC1000.py`                 | TODO: add description |
+| `HDC1000.py`                 | Read HDC1000 sensors Temp/Humidity.  Removed from system due poor preformance of becoming 100% saturated even with the heater bit toggled |
 | `HDC1000serialnumber.py`     | TODO: add description |
 | `ina219`                     | Compiled binary to read INA219 power rail (usage: `ina219 0x44` or `0x45`) |
 | `ina219.c`                   | Source code for `ina219` binary |
