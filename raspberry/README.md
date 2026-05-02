@@ -21,3 +21,27 @@
 | `TSL2561test.py`             | Alternative test script for TSL2561 light sensor (may use different settings). |
 
 > **Note**: The `LICENSE` (MIT) and `README.md` are located in the repository root, not inside this folder.
+
+## BME280 kernel driver (IIO)
+
+Enable the driver by adding to `/boot/config.txt`:
+
+Add:
+```dtoverlay=bme280,addr=0x76```
+
+After reboot, the sensor appears at:
+
+`/sys/bus/i2c/devices/1-0076/iio:device0`
+
+Read values with:
+
+```bash
+IIO_PATH="/sys/bus/i2c/devices/1-0076/iio:device0"
+temp=$(cat $IIO_PATH/in_temp_input)          # millidegrees
+pressure=$(cat $IIO_PATH/in_pressure_input)  # hPa
+humidity=$(cat $IIO_PATH/in_humidityrelative_input) # milli‑percent
+
+echo "Temp: $(echo "scale=2;$temp/1000"|bc)°C"
+echo "Pressure: $pressure hPa"
+echo "Humidity: $(echo "scale=1;$humidity/1000"|bc)%"
+
