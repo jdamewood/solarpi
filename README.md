@@ -28,6 +28,55 @@ This code is released under the **MIT License** (see the `LICENSE` file). You ar
 | Capacitor Bank     | 16 V, 20 F (removed 2026-03-22)                                         |
 
 ## 3. Software & Services
+## Bash script to test overall devices 
+```./solarpi_health.sh```
+## Reports:
+```bash
+🔋 SOLARPI SERVER HEALTH CHECK (Sat 02 May 2026 03:50:15 AM EDT)
+==================================================
+
+📊 SYSTEM OVERVIEW:
+Uptime: up 1 hour, 8 minutes
+Load avg: 0.87, 1.00, 0.82
+Memory: 0.0G/0.4G (10.5%)\n
+CPU Temp: 32.6°C
+
+💾 STORAGE:
+/dev/root    41% /\n/dev/mmcblk0p1 20% /boot\n/dev/root    41% /\n
+🛡️ SERVICES:
+SSH: ✅ Active
+Cron: ✅ Active
+
+🌡️ SENSORS:
+CPU: 33°C
+
+🌤️ BME280 SENSOR:
+  ERROR: Socket read failed (server down?)
+
+📡 NETWORK:
+IP: 192.168.1.164
+WiFi RSSI: -68 dBm (wlan0)
+
+📊 SENSOR SERVER:
+Socket 5005: ❌ DOWN - restart server!
+
+📊 POWERTEST LOGS:
+powertest.log: 480K (7256 lines)
+Archives: 7
+Recent:
+  /home/pi/sensors/powertest.log.1: 730K ✓
+  /home/pi/sensors/powertest.log.2.gz: 24K ✓
+  /home/pi/sensors/powertest.log.3.gz: 27K ✓
+
+🔋 BATTERY:
+Usage: /home/pi/sensors/ina219 <I2C_ADDRESS>  (0x44 or 0x45)
+
+⚠️  RECENT ERRORS:
+✅ No critical errors
+
+✅ Health check complete!
+BME280 upgrade: 100% operational 🌤️📡
+```
 
 ### On Raspberry Pi (SolarPi) – `powertest.service`
 ### See /raspberry/systemd_setup.md for instructions
