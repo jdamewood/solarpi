@@ -176,16 +176,8 @@ Date           PiWh  NetWh BatVmin BatVmax  Buck% Buck_min Buck_max  SoC% USB5V_
 | 2026-03-24 | Battery disconnected for service                                      |
 | 2026-03-25 | Battery reconnected + ESP8266 battery monitor added (cap bank removed) |
 
-## 6. Recent Performance Sample
 
-| Date       | PiWh | NetWh | BatVmin | BatVmax | Buck% | SoC% | USB5V_Vmin | USB5V_Vmax | USB5V_Imin | USB5V_Imax | Tmin | Tmax | Tavg |
-|------------|------|-------|---------|---------|-------|------|------------|------------|------------|------------|------|------|------|
-| 2026-04-07 | 75.1 | 3.7   | 13.20   | 14.78   | 61.5  | 97.0 | 5.04       | 5.26       | 152.1      | 341.1      | 4.8  | 60.4 | 20.2 |
-| … (full daily table available in script output)                          |
-
-> Asterisk (`*`) next to SoC% → no anchor found that day (cloudy / insufficient charge).
-
-## 7. Key Lessons
+## 6. Key Lessons
 
 - **Capacitor bank removal**: The 16 V 20 F cap bank interacted with the buck converter, likely causing high‑frequency oscillations. This resulted in increased battery current draw and elevated RMS noise on the INA41 sensor (floating input). After removal, current readings became stable.
 
@@ -197,7 +189,7 @@ Date           PiWh  NetWh BatVmin BatVmax  Buck% Buck_min Buck_max  SoC% USB5V_
 
 - **Data parsing**: Local LLMs choke on raw CSV megabytes; pre‑aggregation (as in `sensorbatterystatsjson.py`) is essential.
 
-## 8. Health Monitoring Script (`./solarpi_health.sh`)
+## 7. Health Monitoring Script (`./solarpi_health.sh`)
 
 See Section 3 for the full script content and example output. It checks uptime, load, memory, storage, services (SSH, cron), BME280 sensor, WiFi RSSI, sensor socket, logs, battery, and recent kernel errors. Run regularly to verify system health.
 
