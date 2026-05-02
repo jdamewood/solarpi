@@ -1,20 +1,24 @@
-total 96
-drwxr-xr-x 2 pi pi 4096 May  2 00:18 .
-drwxr-xr-x 3 pi pi 4096 May  2 00:57 ..
--rw-r--r-- 1 pi pi 1393 May  2 00:18 adafruit_TSL2651test.py
--rw-r--r-- 1 pi pi 2507 May  2 00:18 bme280_calibrated.py
--rw-r--r-- 1 pi pi  693 May  2 00:18 bme280test.py
--rw-r--r-- 1 pi pi  163 May  2 00:18 HDC1000.py
--rw-r--r-- 1 pi pi 1029 May  2 00:18 HDC1000serialnumber.py
--rwxr-xr-x 1 pi pi 8580 May  2 00:18 ina219
--rw-r--r-- 1 pi pi 2446 May  2 00:18 ina219.c
--rw-r--r-- 1 pi pi 2589 May  2 00:18 ina219test.py
--rwxr-xr-x 1 pi pi  866 May  2 00:18 power.py
--rw-r--r-- 1 pi pi 8946 May  2 00:18 powertest_server_json.py
--rw-r--r-- 1 pi pi 3858 May  2 00:18 powertest_server.py
--rw-r--r-- 1 pi pi 5803 May  2 00:18 SDL_Pi_HDC1000.py
--rw-r--r-- 1 pi pi 2764 May  2 00:18 sensorserver.py
--rwxr-xr-x 1 pi pi 3925 May  2 00:18 solarpi_health.sh
--rwxr-xr-x 1 pi pi 1081 May  2 00:18 test_hdc1000.py
--rw-r--r-- 1 pi pi 1665 May  2 00:18 testina219.c
--rw-r--r-- 1 pi pi 2278 May  2 00:18 TSL2561test.py
+
+# Files in `raspberry/sensors/`
+
+| File                         | Description |
+|------------------------------|-------------|
+| `adafruit_TSL2651test.py`    | TODO: add description |
+| `bme280_calibrated.py`       | TODO: add description |
+| `bme280test.py`              | TODO: add description |
+| `HDC1000.py`                 | TODO: add description |
+| `HDC1000serialnumber.py`     | TODO: add description |
+| `ina219`                     | Compiled binary to read INA219 power rail (usage: `ina219 0x44` or `0x45`) |
+| `ina219.c`                   | Source code for `ina219` binary |
+| `ina219test.py`              | Python version to read INA219 sensor |
+| `power.py`                   | TODO: add description |
+| `powertest_server_json.py`   | Flask server for SolarPi (provides `/solarpi/timeseries` and `/esp8266` endpoints) |
+| `powertest_server.py`        | Older version of the server (may be deprecated) |
+| `SDL_Pi_HDC1000.py`          | Library for HDC1000 temperature/humidity sensor |
+| `sensorserver.py`            | TODO: add description |
+| `solarpi_health.sh`          | System health check script (uptime, BME280, WiFi, logs, etc.) |
+| `test_hdc1000.py`            | Test script for HDC1000 sensor |
+| `testina219.c`               | Test program for INA219 (C source) |
+| `TSL2561test.py`             | Test script for TSL2561 light sensor |
+
+> **Note**: The `LICENSE` (MIT) and `README.md` are located in the repository root, not inside this folder.
