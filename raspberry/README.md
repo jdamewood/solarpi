@@ -12,7 +12,7 @@
 | `ina219.c`                   | Source code for `ina219` binary |
 | `ina219test.py`              | Python version to read INA219 sensor |
 | `power.py`                   | TODO: add description |
-| `powertest_server_json.py`   | Flask server for SolarPi (provides `/solarpi/timeseries` and `/esp8266` endpoints) |
+| `powertest_server_json.py`   | Main sensor server on Raspberry Pi. Reads INA219, TSL2561, and BME280 at 1 Hz, logs to CSV/JSON, and listens on port 5005 for `"go"` command (returns JSON). Used by `solarpi_health.sh` and client dashboards. |
 | `powertest_server.py`        | Older version of the server (may be deprecated) |
 | `SDL_Pi_HDC1000.py`          | Library for HDC1000 temperature/humidity sensor |
 | `sensorserver.py`            | TODO: add description |
