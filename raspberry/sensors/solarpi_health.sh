@@ -30,9 +30,9 @@ fi
 
 echo ""
 echo "🌤️ BME280 SENSOR:"
-# Direct read from your LIVE socket server (most reliable)
-if timeout 3 nc 127.0.0.1 5005 <<< "go" 2>/dev/null | grep -q "bme_"; then
-    BME_JSON=$(timeout 3 nc 127.0.0.1 5005 <<< "go" 2>/dev/null)
+# Query the Flask HTTP endpoint (port 5000) which is known to work
+BME_JSON=$(curl -s --max-time 3 http://192.168.1.100:5000/solarpi/timeseries 2>/dev/null)
+if echo "$BME_JSON" | grep -q "bme_temp"; then
     BME_TEMP=$(echo "$BME_JSON" | grep -o '"bme_temp":[^,}]*' | cut -d: -f2 | tr -d ' ,')
     BME_HUM=$(echo "$BME_JSON" | grep -o '"bme_hum":[^,}]*' | cut -d: -f2 | tr -d ' ,')
     BME_PRESS=$(echo "$BME_JSON" | grep -o '"bme_press":[^,}]*' | cut -d: -f2 | tr -d ' ,')
@@ -47,7 +47,7 @@ if timeout 3 nc 127.0.0.1 5005 <<< "go" 2>/dev/null | grep -q "bme_"; then
         *)     echo "  ✅ Perfect" ;;
     esac
 else
-    echo "  ERROR: Socket read failed (server down?)"
+    echo "  ERROR: HTTP endpoint unreachable (server down?)"
 fi
 
 
@@ -118,4 +118,3 @@ dmesg | tail -20 | grep -iE 'error|fail|oom|thermal|disconnect|i2c' || echo "✅
 echo ""
 echo "✅ Health check complete!"
 echo "BME280 upgrade: 100% operational 🌤️📡"
-
