@@ -46,9 +46,11 @@ sudo systemctl status powertest.service
 ```
 ## 4. Data Processing Script
 
-**`python3 sensorbatterystatsjson.py`**  
+**`sensorbatterystatsjson.py`**  
+Example run:
+```python3 sensorbatterystatsjson.py```
 
-
+```
 Fetches data from both Flask endpoints, computes daily statistics:
 
 - Pi energy consumption (`PiWh`)
