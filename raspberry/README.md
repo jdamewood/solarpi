@@ -3,7 +3,7 @@
 
 | File                         | Description |
 |------------------------------|-------------|
-| `adafruit_TSL2651test.py`    | TODO: add description |
+| `adafruit_TSL2651test.py`    | Test script for TSL2561 light sensor |
 | `bme280_calibrated.py`       | TODO: add description |
 | `bme280test.py`              | TODO: add description |
 | `HDC1000.py`                 | TODO: add description |
