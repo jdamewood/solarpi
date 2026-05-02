@@ -183,15 +183,11 @@ Date           PiWh  NetWh BatVmin BatVmax  Buck% Buck_min Buck_max  SoC% USB5V_
 ## 6. Key Lessons
 
 - **Capacitor bank removal**: The 16 V 20 F cap bank interacted with the buck converter, likely causing high‑frequency oscillations. This resulted in increased battery current draw and elevated RMS noise on the INA41 sensor (floating input). After removal, current readings became stable.
-
 - **Low‑voltage shutdown at 9.4 V** caused buck converter dropout (output ~4.3 V), trapping the Pi in a brownout loop. Upgrading to 20 Ah battery prevented deep discharge and solved the issue.
-
 - **System‑level watchdog** was disabled because it caused unnecessary reboots. Service uses `Restart=always` without a watchdog.
-
 - **Variable naming**: `current_ma` (ESP8266 net battery current) is ambiguous; would be clearer as `bat_current_ma`.
-
 - **Data parsing**: Local LLMs choke on raw CSV megabytes; pre‑aggregation (as in `sensorbatterystatsjson.py`) is essential.
-
+- **HDC1000 i2c sensor*** Over time the sensor gets stuck in 100% saturation when exposed to outside.  Switched to BME280 sensor  
 ## 7. Health Monitoring Script (`./solarpi_health.sh`)
 
 See Section 3 for the full script content and example output. It checks uptime, load, memory, storage, services (SSH, cron), BME280 sensor, WiFi RSSI, sensor socket, logs, battery, and recent kernel errors. Run regularly to verify system health.
