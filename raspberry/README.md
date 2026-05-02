@@ -16,7 +16,7 @@
 | `SDL_Pi_HDC1000.py`          | Third‑party library for HDC1000 sensor (deprecated). |
 | `sensorserver.py`            | Simple socket server that streams sensor data (pre‑Flask implementation). Possibly deprecated. |
 | `solarpi_health.sh`          | Comprehensive system health check. Reads BME280 via port 5005 socket, displays uptime, load, memory, CPU temp, storage, services (SSH, cron), WiFi RSSI, log sizes, battery (via `ina219`), and recent kernel errors. |
-| `test_hdc1000.py`            | Quick test for HDC1000 sensor. |
+| `test_hdc1000.py`            | Quick test for HDC1000 sensor  (deprecated). |
 | `testina219.c`               | Minimal C test for INA219 (different from the full `ina219.c`). |
 | `TSL2561test.py`             | Alternative test script for TSL2561 light sensor (may use different settings). |
 
