@@ -30,7 +30,7 @@ This code is released under the **MIT License** (see the `LICENSE` file). You ar
 ## 3. Software & Services
 
 ### On Raspberry Pi (SolarPi) – `powertest.service`
-# See /raspberry/systemd_setup.md for instructions
+## See /raspberry/systemd_setup.md for instructions
 
 
 | Setting          | Value                                       |
