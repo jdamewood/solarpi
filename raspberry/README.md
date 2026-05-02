@@ -53,5 +53,7 @@ echo "Pressure: $pressure hPa"
 echo "Humidity: $humidity_pct%"
 ```
 Make it executable ```chmod +x bme280.sh```
+Then run:
+```./bme280.sh```
 
 This method does not require Python libraries and is lightweight. Your existing Python scripts are also valid; you can keep both.
