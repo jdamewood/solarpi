@@ -56,10 +56,6 @@ sudo systemctl disable powertest.service
 - Ensure Python dependencies (adafruit‑ina219, smbus2, bme280) are installed in the system or user environment.
 - The working directory /home/pi/sensors must contain powertest_server_json.py and the sensor libraries.
 
-Optional: BME280 I2C Reset Service
-If you need a separate service to reset the BME280 (e.g., bme-reset.service), create a similar unit file and enable it. However, the standard powertest.service usually works without it.
-
-text
 
 Then, in your `README.md`, you can reference this file with a simple link:
 
