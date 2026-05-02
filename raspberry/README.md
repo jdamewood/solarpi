@@ -12,7 +12,7 @@
 | `ina219test.py`              | Python alternative to read INA219 sensor (useful for debugging). |
 | `power.py`                   |  Legacy Python 2 script to read INA219 at address 0x45. Not currently used; would need updating to Python 3 for modern systems. |
 | `powertest_server_json.py`   | Main sensor server on Raspberry Pi. Reads INA219, TSL2561, and BME280 at 1 Hz, logs to CSV/JSON, listens on port 5005 for `"go"` command (returns JSON). Used by `solarpi_health.sh` and client dashboards. |
-| `powertest_server.py`        | Older version of the server (may be deprecated). |
+| `powertest_server.py`        | Older version of the server (deprecated). |
 | `SDL_Pi_HDC1000.py`          | Third‑party library for HDC1000 sensor. |
 | `sensorserver.py`            | Simple socket server that streams sensor data (pre‑Flask implementation). Possibly deprecated. |
 | `solarpi_health.sh`          | Comprehensive system health check. Reads BME280 via port 5005 socket, displays uptime, load, memory, CPU temp, storage, services (SSH, cron), WiFi RSSI, log sizes, battery (via `ina219`), and recent kernel errors. |
