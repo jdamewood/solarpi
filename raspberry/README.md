@@ -10,7 +10,7 @@
 | `ina219`                     | Compiled C binary to read INA219 at a given I²C address (usage: `ina219 0x44` or `0x45`). Displays bus voltage, current, power. |
 | `ina219.c`                   | Source code for the `ina219` binary. |
 | `ina219test.py`              | Python alternative to read INA219 sensor (useful for debugging). |
-| `power.py`                   | Script to monitor power consumption (e.g., battery voltage, current, wattage). Exact function TBD. |
+| `power.py`                   |  Legacy Python 2 script to read INA219 at address 0x45. Not currently used; would need updating to Python 3 for modern systems. |
 | `powertest_server_json.py`   | Main sensor server on Raspberry Pi. Reads INA219, TSL2561, and BME280 at 1 Hz, logs to CSV/JSON, listens on port 5005 for `"go"` command (returns JSON). Used by `solarpi_health.sh` and client dashboards. |
 | `powertest_server.py`        | Older version of the server (may be deprecated). |
 | `SDL_Pi_HDC1000.py`          | Third‑party library for HDC1000 sensor. |
