@@ -35,6 +35,9 @@ After reboot, the sensor appears at:
 
 Read values with:
 
+Create file:
+``` nano bme280.sh```
+
 ```bash
 #!/bin/bash
 IIO_PATH="/sys/bus/i2c/devices/1-0076/iio:device0"
@@ -49,4 +52,6 @@ echo "Temp: $temp_c°C"
 echo "Pressure: $pressure hPa"
 echo "Humidity: $humidity_pct%"
 ```
+Make it executable ```chmod +x bme280.sh```
+
 This method does not require Python libraries and is lightweight. Your existing Python scripts are also valid; you can keep both.
